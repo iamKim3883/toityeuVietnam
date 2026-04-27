@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-artistic: "Alex Brush", cursive;
+}
+
+@layer base {
+  body {
+    @apply bg-red-700 text-white selection:bg-yellow-400 selection:text-red-900;
+  }
+}
+
+@layer components {
+  .vn-card {
+    @apply bg-red-900/40 backdrop-blur-md rounded-2xl border border-yellow-500/20 shadow-xl;
+  }
+  
+  .vn-button {
+    @apply bg-yellow-400 text-red-900 font-bold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg shadow-yellow-500/20 hover:bg-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .vn-star-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, rgba(218, 37, 29, 0.9) 0%, rgba(139, 0, 0, 1) 100%);
+    overflow: hidden;
+  }
+
+  .star-element {
+    position: absolute;
+    color: rgba(255, 255, 0, 0.05);
+    user-select: none;
+  }
+
+  .yellowPlaceholder::placeholder {
+    @apply text-yellow-500/30;
+  }
+}
